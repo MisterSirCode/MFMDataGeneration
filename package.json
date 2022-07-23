@@ -1,0 +1,19 @@
+{
+  "name": "mfmdatageneration",
+  "version": "1.0.0",
+  "description": "Asset Generator for my Modern Furniture Mod",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MisterSirCode/MFMDataGeneration.git"
+  },
+  "author": "SirCode",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MisterSirCode/MFMDataGeneration/issues"
+  },
+  "homepage": "https://github.com/MisterSirCode/MFMDataGeneration#readme"
+}
