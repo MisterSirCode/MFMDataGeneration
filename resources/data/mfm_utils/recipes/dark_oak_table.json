@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "LL",
+        "SS"
+    ],
+    "key": {
+        "L": {
+            "item": "minecraft:dark_oak_log"
+        },
+        "S": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "mfm_utils:dark_oak_table",
+        "count": 1
+    }
+}

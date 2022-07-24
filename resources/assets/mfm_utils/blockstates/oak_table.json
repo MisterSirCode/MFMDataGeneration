@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "mfm_utils:block/oak_table"
+        }
+    }
+}

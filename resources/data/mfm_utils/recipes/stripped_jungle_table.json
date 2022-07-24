@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "LL",
+        "SS"
+    ],
+    "key": {
+        "L": {
+            "item": "minecraft:stripped_jungle_log"
+        },
+        "S": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "mfm_utils:stripped_jungle_table",
+        "count": 1
+    }
+}
