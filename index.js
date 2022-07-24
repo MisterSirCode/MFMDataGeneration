@@ -1,3 +1,5 @@
+const modid = "scm_mfmutils";
+
 const vanillaLogs = [
     "oak", "birch", "spruce", "jungle", "dark_oak", "acacia", "mangrove", "warped", "crimson", 
     "stripped_oak", "stripped_birch", "stripped_spruce", "stripped_jungle", "stripped_dark_oak", "stripped_acacia", 
@@ -53,7 +55,7 @@ function RecipeJSON(type, id, stem) {
     };
 }
 
-function GenerateWoodModels() {
+function Generate() {
     let listOfData = {};
     furnitures.forEach(type => {
         vanillaLogs.forEach(wood => {
@@ -71,8 +73,9 @@ function GenerateWoodModels() {
             fs.writeFileSync(`./resources/data/mfm_utils/recipes/${fid}.json`, recip);
         });
     });
+    listOfData[`itemGroup.${modid}.mfmitemgroup`] = "Modern Furniture Mod";
     let langf = JSON.stringify(listOfData, null, 4);
     fs.writeFileSync(`./resources/assets/mfm_utils/lang/en_us.json`, langf);
 }
 
-GenerateWoodModels();
+Generate();
