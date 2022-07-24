@@ -32,7 +32,7 @@ function BlockstateJSON(id) {
     };
 }
 
-function RecipeJSON(type, id) {
+function RecipeJSON(type, id, stem) {
     let pattern = ["LL","SS"];
     if (type == "bench") pattern = ["L","S"];
     return {
@@ -40,7 +40,7 @@ function RecipeJSON(type, id) {
         pattern: pattern,
         key: {
             L: {
-                item: "minecraft:" + id + "_log"
+                item: "minecraft:" + (stem ? id + "_stem" : id + "_log")
             },
             S: {
                 item: "minecraft:stick"
@@ -63,7 +63,7 @@ function GenerateWoodModels() {
             if (wood.endsWith("warped") || wood.endsWith("crimson")) stem = true; 
             let model = JSON.stringify(ModelJSON(type, wood, stem), null, 4);
             let state = JSON.stringify(BlockstateJSON(wood + "_" + type), null, 4);
-            let recip = JSON.stringify(RecipeJSON(type, wood), null, 4);
+            let recip = JSON.stringify(RecipeJSON(type, wood, stem), null, 4);
             fs.writeFileSync(`./resources/assets/mfm_utils/models/block/${fid}.json`, model);
             fs.writeFileSync(`./resources/assets/mfm_utils/models/item/${fid}.json`, model);
             fs.writeFileSync(`./resources/assets/mfm_utils/models/item/${fid}.json`, model);
