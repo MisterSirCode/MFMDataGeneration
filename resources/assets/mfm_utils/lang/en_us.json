@@ -34,5 +34,6 @@
     "block.mfm_utils.stripped_acacia_bench": "Stripped Acacia Bench",
     "block.mfm_utils.stripped_mangrove_bench": "Stripped Mangrove Bench",
     "block.mfm_utils.stripped_warped_bench": "Stripped Warped Bench",
-    "block.mfm_utils.stripped_crimson_bench": "Stripped Crimson Bench"
+    "block.mfm_utils.stripped_crimson_bench": "Stripped Crimson Bench",
+    "itemGroup.mfm_utils.mfmitemgroup": "Modern Furniture Mod"
 }

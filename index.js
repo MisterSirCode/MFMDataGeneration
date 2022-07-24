@@ -1,4 +1,4 @@
-const modid = "scm_mfmutils";
+const modid = "mfm_utils";
 
 const vanillaLogs = [
     "oak", "birch", "spruce", "jungle", "dark_oak", "acacia", "mangrove", "warped", "crimson", 
@@ -16,7 +16,7 @@ function ModelJSON(type, id, stem) {
     if (stem == true) id += "_stem";
     else id += "_log";
     return {
-        parent: "mfm_utils:block/" + type,
+        parent: modid + ":block/" + type,
         textures: {
             top: "minecraft:block/" + id + "_top",
             sides: "minecraft:block/" + id
@@ -28,7 +28,7 @@ function BlockstateJSON(id) {
     return {
         variants: {
             "": {
-                model: "mfm_utils:block/" + id
+                model: modid + ":block/" + id
             }
         }
     };
@@ -49,7 +49,7 @@ function RecipeJSON(type, id, stem) {
             }
         },
         result: {
-            item: "mfm_utils:" + id + "_" + type,
+            item: modid + ":" + id + "_" + type,
             count: 1
         }
     };
@@ -60,22 +60,22 @@ function Generate() {
     furnitures.forEach(type => {
         vanillaLogs.forEach(wood => {
             let fid = `${wood}_${type}`;
-            listOfData[`block.mfm_utils.${fid}`] = fid.split("_").join(" ").replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
+            listOfData[`block.${modid}.${fid}`] = fid.split("_").join(" ").replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
             let stem = false;
             if (wood.endsWith("warped") || wood.endsWith("crimson")) stem = true; 
             let model = JSON.stringify(ModelJSON(type, wood, stem), null, 4);
             let state = JSON.stringify(BlockstateJSON(wood + "_" + type), null, 4);
             let recip = JSON.stringify(RecipeJSON(type, wood, stem), null, 4);
-            fs.writeFileSync(`./resources/assets/mfm_utils/models/block/${fid}.json`, model);
-            fs.writeFileSync(`./resources/assets/mfm_utils/models/item/${fid}.json`, model);
-            fs.writeFileSync(`./resources/assets/mfm_utils/models/item/${fid}.json`, model);
-            fs.writeFileSync(`./resources/assets/mfm_utils/blockstates/${fid}.json`, state);
-            fs.writeFileSync(`./resources/data/mfm_utils/recipes/${fid}.json`, recip);
+            fs.writeFileSync(`./resources/assets/${modid}/models/block/${fid}.json`, model);
+            fs.writeFileSync(`./resources/assets/${modid}/models/item/${fid}.json`, model);
+            fs.writeFileSync(`./resources/assets/${modid}/models/item/${fid}.json`, model);
+            fs.writeFileSync(`./resources/assets/${modid}/blockstates/${fid}.json`, state);
+            fs.writeFileSync(`./resources/data/${modid}/recipes/${fid}.json`, recip);
         });
     });
     listOfData[`itemGroup.${modid}.mfmitemgroup`] = "Modern Furniture Mod";
     let langf = JSON.stringify(listOfData, null, 4);
-    fs.writeFileSync(`./resources/assets/mfm_utils/lang/en_us.json`, langf);
+    fs.writeFileSync(`./resources/assets/${modid}/lang/en_us.json`, langf);
 }
 
 Generate();
