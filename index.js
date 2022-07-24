@@ -4,6 +4,10 @@ const vanillaLogs = [
     "stripped_mangrove", "stripped_warped", "stripped_crimson"
 ];
 
+const furnitures = [
+    "table", "bench"
+];
+
 const fs = require('fs');
 
 function ModelJSON(type, id, stem) {
@@ -52,18 +56,20 @@ function RecipeJSON(type, id) {
 
 
 function GenerateWoodModels() {
-    vanillaLogs.forEach(wood => {
-        let stem = false;
-        if (wood.endsWith("warped") || wood.endsWith("crimson")) stem = true; 
-        let model = JSON.stringify(ModelJSON("table", wood, stem), null, 4);
-        let state = JSON.stringify(BlockstateJSON(wood + "_table"), null, 4);
-        let recip = JSON.stringify(RecipeJSON("table", wood), null, 4);
-        fs.writeFileSync(`./resources/assets/mfm_utils/models/block/${wood}_table.json`, model);
-        fs.writeFileSync(`./resources/assets/mfm_utils/models/item/${wood}_table.json`, model);
-        fs.writeFileSync(`./resources/assets/mfm_utils/models/item/${wood}_table.json`, model);
-        fs.writeFileSync(`./resources/assets/mfm_utils/blockstates/${wood}_table.json`, state);
-        fs.writeFileSync(`./resources/data/mfm_utils/recipes/${wood}_table.json`, recip);
-    });
+    furnitures.forEach(type => {
+        vanillaLogs.forEach(wood => {
+            let stem = false;
+            if (wood.endsWith("warped") || wood.endsWith("crimson")) stem = true; 
+            let model = JSON.stringify(ModelJSON(type, wood, stem), null, 4);
+            let state = JSON.stringify(BlockstateJSON(wood + "_" + type), null, 4);
+            let recip = JSON.stringify(RecipeJSON(type, wood), null, 4);
+            fs.writeFileSync(`./resources/assets/mfm_utils/models/block/${wood}_${type}.json`, model);
+            fs.writeFileSync(`./resources/assets/mfm_utils/models/item/${wood}_${type}.json`, model);
+            fs.writeFileSync(`./resources/assets/mfm_utils/models/item/${wood}_${type}.json`, model);
+            fs.writeFileSync(`./resources/assets/mfm_utils/blockstates/${wood}_${type}.json`, state);
+            fs.writeFileSync(`./resources/data/mfm_utils/recipes/${wood}_${type}.json`, recip);
+        });
+    })
 }
 
 GenerateWoodModels();

@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "LL",
+        "SS"
+    ],
+    "key": {
+        "L": {
+            "item": "minecraft:crimson_log"
+        },
+        "S": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "mfm_utils:crimson_bench",
+        "count": 1
+    }
+}
