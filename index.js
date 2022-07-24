@@ -33,12 +33,11 @@ function BlockstateJSON(id) {
 }
 
 function RecipeJSON(type, id) {
+    let pattern = ["LL","SS"];
+    if (type == "bench") pattern = ["L","S"];
     return {
         type: "minecraft:crafting_shaped",
-        pattern: [
-            "LL",
-            "SS"
-        ],
+        pattern: pattern,
         key: {
             L: {
                 item: "minecraft:" + id + "_log"
@@ -53,7 +52,6 @@ function RecipeJSON(type, id) {
         }
     };
 }
-
 
 function GenerateWoodModels() {
     furnitures.forEach(type => {
