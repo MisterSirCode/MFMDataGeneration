@@ -58,7 +58,7 @@ function GenerateWoodModels() {
     furnitures.forEach(type => {
         vanillaLogs.forEach(wood => {
             let fid = `${wood}_${type}`;
-            listOfData[`block.mfm_utils.${fid}`] = fid.split("_").join(" ").toUpperCase();
+            listOfData[`block.mfm_utils.${fid}`] = fid.split("_").join(" ").replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
             let stem = false;
             if (wood.endsWith("warped") || wood.endsWith("crimson")) stem = true; 
             let model = JSON.stringify(ModelJSON(type, wood, stem), null, 4);
