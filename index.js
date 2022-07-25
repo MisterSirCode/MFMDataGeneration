@@ -7,7 +7,7 @@ const vanillaLogs = [
 ];
 
 const furnitures = [
-    "table", "bench"
+    "table", "bench", "grate"
 ];
 
 const fs = require('fs');
@@ -15,12 +15,11 @@ const fs = require('fs');
 function ModelJSON(type, id, stem) {
     if (stem == true) id += "_stem";
     else id += "_log";
+    let tex = { sides: "minecraft:block/" + id };
+    if (type != "grate") tex['top'] = "minecraft:block/" + id + "_top";
     return {
         parent: modid + ":block/" + type,
-        textures: {
-            top: "minecraft:block/" + id + "_top",
-            sides: "minecraft:block/" + id
-        }
+        textures: tex
     };
 }
 
@@ -37,6 +36,7 @@ function BlockstateJSON(id) {
 function RecipeJSON(type, id, stem) {
     let pattern = ["LL","SS"];
     if (type == "bench") pattern = ["L","S"];
+    if (type == "grate") pattern = ["SSS", "SLS", "SSS"];
     return {
         type: "minecraft:crafting_shaped",
         pattern: pattern,
@@ -50,7 +50,7 @@ function RecipeJSON(type, id, stem) {
         },
         result: {
             item: modid + ":" + id + "_" + type,
-            count: 1
+            count: type == "grate" ? 4 : 1
         }
     };
 }

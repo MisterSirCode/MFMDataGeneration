@@ -1,7 +1,7 @@
 {
     "parent": "mfm_utils:block/bench",
     "textures": {
-        "top": "minecraft:block/stripped_acacia_log_top",
-        "sides": "minecraft:block/stripped_acacia_log"
+        "sides": "minecraft:block/stripped_acacia_log",
+        "top": "minecraft:block/stripped_acacia_log_top"
     }
 }

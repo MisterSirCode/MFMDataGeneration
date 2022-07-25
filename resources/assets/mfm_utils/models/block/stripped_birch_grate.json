@@ -1,0 +1,6 @@
+{
+    "parent": "mfm_utils:block/grate",
+    "textures": {
+        "sides": "minecraft:block/stripped_birch_log"
+    }
+}

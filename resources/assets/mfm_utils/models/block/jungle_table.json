@@ -1,7 +1,7 @@
 {
     "parent": "mfm_utils:block/table",
     "textures": {
-        "top": "minecraft:block/jungle_log_top",
-        "sides": "minecraft:block/jungle_log"
+        "sides": "minecraft:block/jungle_log",
+        "top": "minecraft:block/jungle_log_top"
     }
 }
