@@ -86,7 +86,7 @@ function Generate() {
     let langf = JSON.stringify(listOfData, null, 4);
     fs.writeFileSync(`./resources/assets/${modid}/lang/en_us.json`, langf);
     let climb = JSON.stringify(TagJSON(grates), null, 4);
-    fs.writeFileSync(`./resources/data/minecraft/tags/climbable.json`, climb);
+    fs.writeFileSync(`./resources/data/minecraft/tags/blocks/climbable.json`, climb);
 }
 
 Generate();
