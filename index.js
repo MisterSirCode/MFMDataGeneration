@@ -55,16 +55,8 @@ function RecipeJSON(type, id, stem) {
     };
 }
 
-function TagJSON(ids) {
-    return {
-        replace: false,
-        values: ids
-    };
-}
-
 function Generate() {
     let listOfData = {};
-    let grates = [];
     furnitures.forEach(type => {
         vanillaLogs.forEach(wood => {
             let fid = `${wood}_${type}`;
@@ -79,14 +71,11 @@ function Generate() {
             fs.writeFileSync(`./resources/assets/${modid}/models/item/${fid}.json`, model);
             fs.writeFileSync(`./resources/assets/${modid}/blockstates/${fid}.json`, state);
             fs.writeFileSync(`./resources/data/${modid}/recipes/${fid}.json`, recip);
-            if (type == "grate") grates.push(`${modid}:${wood}_grate`);
         });
     });
     listOfData[`itemGroup.${modid}.mfmitemgroup`] = "Modern Furniture Mod";
     let langf = JSON.stringify(listOfData, null, 4);
     fs.writeFileSync(`./resources/assets/${modid}/lang/en_us.json`, langf);
-    let climb = JSON.stringify(TagJSON(grates), null, 4);
-    fs.writeFileSync(`./resources/data/minecraft/tags/blocks/climbable.json`, climb);
 }
 
 Generate();
