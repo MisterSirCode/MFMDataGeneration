@@ -7,7 +7,7 @@ const vanillaLogs = [
 ];
 
 const furnitures = [
-    "table", "bench", "grate", "crate"
+    "table", "bench", "grate", "box"
 ];
 
 const fs = require('fs');
