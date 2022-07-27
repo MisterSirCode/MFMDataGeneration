@@ -18,7 +18,7 @@ function ModelJSON(type, id, stem) {
     else nid += "_log";
     let tex = { sides: "minecraft:block/" + nid };
     if (type != "grate") tex['top'] = "minecraft:block/" + nid + "_top";
-    if (type == "box") tex['inlay'] = "minecraft:block/" + id + "_planks";
+    if (type == "box") tex['inlay'] = "minecraft:block/" + id.replace("stripped_", "") + "_planks";
     return {
         parent: modid + ":block/" + type,
         textures: tex

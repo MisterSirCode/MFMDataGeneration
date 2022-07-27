@@ -3,6 +3,6 @@
     "textures": {
         "sides": "minecraft:block/stripped_jungle_log",
         "top": "minecraft:block/stripped_jungle_log_top",
-        "inlay": "minecraft:block/stripped_jungle_planks"
+        "inlay": "minecraft:block/jungle_planks"
     }
 }
