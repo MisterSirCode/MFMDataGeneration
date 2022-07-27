@@ -13,10 +13,12 @@ const furnitures = [
 const fs = require('fs');
 
 function ModelJSON(type, id, stem) {
-    if (stem == true) id += "_stem";
-    else id += "_log";
-    let tex = { sides: "minecraft:block/" + id };
-    if (type != "grate") tex['top'] = "minecraft:block/" + id + "_top";
+    let nid = id;
+    if (stem == true) nid += "_stem";
+    else nid += "_log";
+    let tex = { sides: "minecraft:block/" + nid };
+    if (type != "grate") tex['top'] = "minecraft:block/" + nid + "_top";
+    if (type == "box") tex['inlay'] = "minecraft:block/" + id + "_planks";
     return {
         parent: modid + ":block/" + type,
         textures: tex
@@ -37,17 +39,24 @@ function RecipeJSON(type, id, stem) {
     let pattern = ["LL","SS"];
     if (type == "bench") pattern = ["L","S"];
     if (type == "grate") pattern = ["SSS", "SLS", "SSS"];
+    let keym = {
+        L: {
+            item: "minecraft:" + (stem ? id + "_stem" : id + "_log")
+        },
+        S: {
+            item: "minecraft:stick"
+        }
+    };
+    if (type == "box") {
+        pattern = ["LSL", "SCS", "LSL"];
+        keym["C"] = {
+            item: "minecraft:chest"
+        }
+    }
     return {
         type: "minecraft:crafting_shaped",
         pattern: pattern,
-        key: {
-            L: {
-                item: "minecraft:" + (stem ? id + "_stem" : id + "_log")
-            },
-            S: {
-                item: "minecraft:stick"
-            }
-        },
+        key: keym,
         result: {
             item: modid + ":" + id + "_" + type,
             count: type == "grate" ? 4 : 1

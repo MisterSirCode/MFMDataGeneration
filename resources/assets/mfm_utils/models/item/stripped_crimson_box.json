@@ -1,0 +1,8 @@
+{
+    "parent": "mfm_utils:block/box",
+    "textures": {
+        "sides": "minecraft:block/stripped_crimson_stem",
+        "top": "minecraft:block/stripped_crimson_stem_top",
+        "inlay": "minecraft:block/stripped_crimson_planks"
+    }
+}
