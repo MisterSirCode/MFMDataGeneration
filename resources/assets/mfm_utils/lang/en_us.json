@@ -71,5 +71,6 @@
     "block.mfm_utils.stripped_mangrove_box": "Stripped Mangrove Box",
     "block.mfm_utils.stripped_warped_box": "Stripped Warped Box",
     "block.mfm_utils.stripped_crimson_box": "Stripped Crimson Box",
-    "itemGroup.mfm_utils.mfmitemgroup": "Modern Furniture Mod"
+    "itemGroup.mfm_utils.mfmitemgroup": "Modern Furniture Mod",
+    "container.mfm_utils.box": "Box"
 }

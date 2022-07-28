@@ -83,6 +83,7 @@ function Generate() {
         });
     });
     listOfData[`itemGroup.${modid}.mfmitemgroup`] = "Modern Furniture Mod";
+    listOfData[`container.mfm_utils.box`] = "Box";
     let langf = JSON.stringify(listOfData, null, 4);
     fs.writeFileSync(`./resources/assets/${modid}/lang/en_us.json`, langf);
 }
