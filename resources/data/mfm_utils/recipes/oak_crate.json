@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "LSL",
+        "SCS",
+        "LSL"
+    ],
+    "key": {
+        "L": {
+            "item": "minecraft:oak_log"
+        },
+        "S": {
+            "item": "minecraft:stick"
+        },
+        "C": {
+            "item": "minecraft:chest"
+        }
+    },
+    "result": {
+        "item": "mfm_utils:oak_crate",
+        "count": 1
+    }
+}

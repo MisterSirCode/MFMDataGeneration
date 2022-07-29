@@ -1,8 +1,0 @@
-{
-    "parent": "mfm_utils:block/box",
-    "textures": {
-        "sides": "minecraft:block/warped_stem",
-        "top": "minecraft:block/warped_stem_top",
-        "inlay": "minecraft:block/warped_planks"
-    }
-}

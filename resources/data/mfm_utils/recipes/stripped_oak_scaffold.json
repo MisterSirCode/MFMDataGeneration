@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "SSS",
+        "SLS",
+        "SSS"
+    ],
+    "key": {
+        "L": {
+            "item": "minecraft:stripped_oak_log"
+        },
+        "S": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "mfm_utils:stripped_oak_scaffold",
+        "count": 4
+    }
+}

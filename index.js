@@ -7,7 +7,7 @@ const vanillaLogs = [
 ];
 
 const furnitures = [
-    "table", "bench", "grate", "box"
+    "table", "bench", "scaffold", "crate"
 ];
 
 const fs = require('fs');
@@ -17,8 +17,8 @@ function ModelJSON(type, id, stem) {
     if (stem == true) nid += "_stem";
     else nid += "_log";
     let tex = { sides: "minecraft:block/" + nid };
-    if (type != "grate") tex['top'] = "minecraft:block/" + nid + "_top";
-    if (type == "box") tex['inlay'] = "minecraft:block/" + id.replace("stripped_", "") + "_planks";
+    if (type != furnitures[2]) tex['top'] = "minecraft:block/" + nid + "_top";
+    if (type == furnitures[3]) tex['inlay'] = "minecraft:block/" + id.replace("stripped_", "") + "_planks";
     return {
         parent: modid + ":block/" + type,
         textures: tex
@@ -37,8 +37,8 @@ function BlockstateJSON(id) {
 
 function RecipeJSON(type, id, stem) {
     let pattern = ["LL","SS"];
-    if (type == "bench") pattern = ["L","S"];
-    if (type == "grate") pattern = ["SSS", "SLS", "SSS"];
+    if (type == furnitures[1]) pattern = ["L","S"];
+    if (type == furnitures[2]) pattern = ["SSS", "SLS", "SSS"];
     let keym = {
         L: {
             item: "minecraft:" + (stem ? id + "_stem" : id + "_log")
@@ -47,7 +47,7 @@ function RecipeJSON(type, id, stem) {
             item: "minecraft:stick"
         }
     };
-    if (type == "box") {
+    if (type == furnitures[3]) {
         pattern = ["LSL", "SCS", "LSL"];
         keym["C"] = {
             item: "minecraft:chest"
@@ -59,7 +59,7 @@ function RecipeJSON(type, id, stem) {
         key: keym,
         result: {
             item: modid + ":" + id + "_" + type,
-            count: type == "grate" ? 4 : 1
+            count: type == furnitures[2] ? 4 : 1
         }
     };
 }
@@ -83,7 +83,7 @@ function Generate() {
         });
     });
     listOfData[`itemGroup.${modid}.mfmitemgroup`] = "Modern Furniture Mod";
-    listOfData[`container.mfm_utils.box`] = "Box";
+    listOfData[`container.mfm_utils.${furnitures[3]}`] = "Crate";
     let langf = JSON.stringify(listOfData, null, 4);
     fs.writeFileSync(`./resources/assets/${modid}/lang/en_us.json`, langf);
 }

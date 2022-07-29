@@ -1,0 +1,8 @@
+{
+    "parent": "mfm_utils:block/crate",
+    "textures": {
+        "sides": "minecraft:block/oak_log",
+        "top": "minecraft:block/oak_log_top",
+        "inlay": "minecraft:block/oak_planks"
+    }
+}

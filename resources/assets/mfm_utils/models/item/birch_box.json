@@ -1,8 +1,0 @@
-{
-    "parent": "mfm_utils:block/box",
-    "textures": {
-        "sides": "minecraft:block/birch_log",
-        "top": "minecraft:block/birch_log_top",
-        "inlay": "minecraft:block/birch_planks"
-    }
-}

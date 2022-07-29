@@ -1,6 +1,0 @@
-{
-    "parent": "mfm_utils:block/grate",
-    "textures": {
-        "sides": "minecraft:block/stripped_crimson_stem"
-    }
-}
