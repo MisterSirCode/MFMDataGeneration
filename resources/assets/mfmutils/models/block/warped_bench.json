@@ -1,5 +1,5 @@
 {
-    "parent": "mfm_utils:block/bench",
+    "parent": "mfmutils:block/bench",
     "textures": {
         "sides": "minecraft:block/warped_stem",
         "top": "minecraft:block/warped_stem_top"

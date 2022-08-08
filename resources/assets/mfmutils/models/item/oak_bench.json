@@ -1,5 +1,5 @@
 {
-    "parent": "mfm_utils:block/bench",
+    "parent": "mfmutils:block/bench",
     "textures": {
         "sides": "minecraft:block/oak_log",
         "top": "minecraft:block/oak_log_top"

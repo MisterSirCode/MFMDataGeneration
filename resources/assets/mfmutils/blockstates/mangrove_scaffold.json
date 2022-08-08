@@ -1,7 +1,7 @@
 {
     "variants": {
         "": {
-            "model": "mfm_utils:block/mangrove_scaffold"
+            "model": "mfmutils:block/mangrove_scaffold"
         }
     }
 }

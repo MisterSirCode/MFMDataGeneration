@@ -1,7 +1,7 @@
 {
     "variants": {
         "": {
-            "model": "mfm_utils:block/warped_bench"
+            "model": "mfmutils:block/warped_bench"
         }
     }
 }

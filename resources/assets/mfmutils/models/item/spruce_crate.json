@@ -1,5 +1,5 @@
 {
-    "parent": "mfm_utils:block/crate",
+    "parent": "mfmutils:block/crate",
     "textures": {
         "sides": "minecraft:block/spruce_log",
         "top": "minecraft:block/spruce_log_top",

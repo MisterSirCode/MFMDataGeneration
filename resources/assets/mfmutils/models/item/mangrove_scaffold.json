@@ -1,5 +1,5 @@
 {
-    "parent": "mfm_utils:block/scaffold",
+    "parent": "mfmutils:block/scaffold",
     "textures": {
         "sides": "minecraft:block/mangrove_log"
     }

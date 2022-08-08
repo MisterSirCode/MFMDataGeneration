@@ -1,7 +1,7 @@
 {
     "variants": {
         "": {
-            "model": "mfm_utils:block/stripped_warped_table"
+            "model": "mfmutils:block/stripped_warped_table"
         }
     }
 }

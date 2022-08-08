@@ -1,5 +1,5 @@
 {
-    "parent": "mfm_utils:block/table",
+    "parent": "mfmutils:block/table",
     "textures": {
         "sides": "minecraft:block/stripped_birch_log",
         "top": "minecraft:block/stripped_birch_log_top"

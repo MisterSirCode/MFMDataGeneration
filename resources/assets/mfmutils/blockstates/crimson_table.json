@@ -1,7 +1,7 @@
 {
     "variants": {
         "": {
-            "model": "mfm_utils:block/crimson_table"
+            "model": "mfmutils:block/crimson_table"
         }
     }
 }

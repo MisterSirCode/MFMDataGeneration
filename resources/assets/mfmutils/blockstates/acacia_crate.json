@@ -1,7 +1,7 @@
 {
     "variants": {
         "": {
-            "model": "mfm_utils:block/acacia_crate"
+            "model": "mfmutils:block/acacia_crate"
         }
     }
 }

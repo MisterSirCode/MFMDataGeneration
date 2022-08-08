@@ -1,7 +1,7 @@
 {
     "variants": {
         "": {
-            "model": "mfm_utils:block/dark_oak_bench"
+            "model": "mfmutils:block/dark_oak_bench"
         }
     }
 }

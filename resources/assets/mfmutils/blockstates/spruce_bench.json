@@ -1,7 +1,7 @@
 {
     "variants": {
         "": {
-            "model": "mfm_utils:block/spruce_bench"
+            "model": "mfmutils:block/spruce_bench"
         }
     }
 }

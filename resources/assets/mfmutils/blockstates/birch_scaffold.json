@@ -1,7 +1,7 @@
 {
     "variants": {
         "": {
-            "model": "mfm_utils:block/birch_scaffold"
+            "model": "mfmutils:block/birch_scaffold"
         }
     }
 }

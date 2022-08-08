@@ -1,7 +1,7 @@
 {
     "variants": {
         "": {
-            "model": "mfm_utils:block/stripped_spruce_scaffold"
+            "model": "mfmutils:block/stripped_spruce_scaffold"
         }
     }
 }
