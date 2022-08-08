@@ -83,7 +83,7 @@ function Generate() {
         });
     });
     listOfData[`itemGroup.${modid}.mfmitemgroup`] = "Modern Furniture Mod";
-    listOfData[`container.mfm_utils.${furnitures[3]}`] = "Crate";
+    listOfData[`container.${modid}.${furnitures[3]}`] = "Crate";
     let langf = JSON.stringify(listOfData, null, 4);
     fs.writeFileSync(`./resources/assets/${modid}/lang/en_us.json`, langf);
 }
