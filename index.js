@@ -1,4 +1,4 @@
-const modid = "mfm_utils";
+const modid = "mfmutils";
 
 const vanillaLogs = [
     "oak", "birch", "spruce", "jungle", "dark_oak", "acacia", "mangrove", "warped", "crimson", 
